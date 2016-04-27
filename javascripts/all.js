@@ -887,11 +887,12 @@ var parser = require('ua-parser-js');
 document.getElementById('browserName').innerHTML = parser().browser.name;
 document.getElementById('browserMajor').innerHTML = parser().browser.major;
 
-
-var downloadButton = document.querySelector('.download');
-
-downloadButton.addEventListener('click', function () {
+document.querySelector('.download').addEventListener('click', function () {
   this.classList.add('loading');
+});
+
+document.getElementById('otherVersions').addEventListener('click', function (e) {
+  e.preventDefault();
 });
 
 },{"ua-parser-js":1}]},{},[2])
