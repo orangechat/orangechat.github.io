@@ -885,11 +885,22 @@
 var parser = require('ua-parser-js');
 
 document.getElementById('browserName').innerHTML = parser().browser.name;
-document.getElementById('browserMajor').innerHTML = parser().browser.major;
 
-document.querySelector('.download').addEventListener('click', function () {
-  this.classList.add('loading');
+if(parser().browser.name == 'Chrome') {
+  document.querySelector('.download').addEventListener('click', function (e) {
+    this.classList.add('loading');
+    window.location.href = 'https://chrome.google.com/webstore/detail/orangechatio/eikmifkdpckaoknomnbhoeoiiacopofh';
 });
+} else if(parser().browser.name == 'Firefox') {
+  document.querySelector('.download').addEventListener('click', function (e) {
+    this.classList.add('loading');
+    window.location.href = 'https://addons.mozilla.org/en-GB/firefox/addon/orangechatio';
+  });
+} else {
+  document.querySelector('.download').addEventListener('click', function (e) {
+    //
+  });
+}
 
 document.getElementById('otherVersions').addEventListener('click', function (e) {
   e.preventDefault();
