@@ -902,9 +902,5 @@ if(parser().browser.name == 'Chrome') {
   });
 }
 
-document.getElementById('otherVersions').addEventListener('click', function (e) {
-  e.preventDefault();
-});
-
 },{"ua-parser-js":1}]},{},[2])
 //# sourceMappingURL=all.js.map
